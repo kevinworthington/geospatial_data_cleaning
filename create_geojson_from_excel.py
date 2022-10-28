@@ -37,11 +37,11 @@ def main(path,sheet,cols,output, verbose=0):
             # split the location
             points= df.at[index, c].split(",")
 
-            coor_list.append([float(points[0]),float(points[1])])
+            coor_list.append([float(points[1]),float(points[0])])
 
         output_json["features"].append({"type": 'Feature', "properties": {},
                                         "geometry": {"type": 'Polygon',
-                                                     "coordinates": coor_list}})
+                                                     "coordinates": [coor_list]}})
         f = open(output, 'w')
         f.write(json.dumps(output_json, indent=4))
         f.close()
