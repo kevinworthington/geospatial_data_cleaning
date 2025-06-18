@@ -10,7 +10,7 @@
 
 -- Now you can run run the program
 
-python create_geojson_from_excel.py -p "output.xlsx" -s Sheet1 -c "PO1 GPS coordinates,PO2 GPS coordinates,PO3 GPS coordinates,PO4 GPS coordinates,PO5 GPS coordinates" -o output.geojson
+python create_geojson_from_excel.py -p "output.xlsx" -s Sheet1 -a "Plot code" -c "PO1 GPS coordinates,PO2 GPS coordinates,PO3 GPS coordinates,PO4 GPS coordinates,PO5 GPS coordinates" -o output.geojson
 """
 import argparse
 import pandas as pd
@@ -18,7 +18,7 @@ import re
 import json
 
 
-def main(path,sheet,cols,output, verbose=0):
+def main(path,sheet,cols,atts,output, verbose=0):
 
     # step 1 - open the excel file
 
@@ -26,11 +26,15 @@ def main(path,sheet,cols,output, verbose=0):
 
     # step 2 create a list of columns
     cols=cols.split(",")
+    atts = atts.split(",")
 
     # step 3 create stub geojson file
     output_json = {"type": 'FeatureCollection', "features": []}
 
     for index, row in df.iterrows():
+        attributes={}
+        for a in atts:
+            attributes[a]=df.at[index, a]
 
         coor_list=[]
         for c in cols:
@@ -39,7 +43,7 @@ def main(path,sheet,cols,output, verbose=0):
 
             coor_list.append([float(points[1]),float(points[0])])
 
-        output_json["features"].append({"type": 'Feature', "properties": {},
+        output_json["features"].append({"type": 'Feature', "properties": attributes,
                                         "geometry": {"type": 'Polygon',
                                                      "coordinates": [coor_list]}})
         f = open(output, 'w')
@@ -56,6 +60,7 @@ def parse_args():
     parser.add_argument("-p", "--path", help="excel file path", )
     parser.add_argument("-s", "--sheet", help="excel sheet", )
     parser.add_argument("-c", "--cols", help="The columns with points needing normalization", )
+    parser.add_argument("-a", "--attributes", help="The attribute columns in the spreadsheet", )
     parser.add_argument("-o", "--output", help="output file", )
 
     return parser.parse_args()
@@ -66,4 +71,4 @@ if __name__ == '__main__':
         args.verbose = 0
 
 
-    main(args.path,args.sheet,args.cols,args.output,args.verbose)
+    main(args.path,args.sheet,args.cols,args.attributes,args.output,args.verbose)

@@ -3,7 +3,9 @@
     "features": [
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "1PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -34,7 +36,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "2PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -65,7 +69,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "3PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -96,7 +102,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "4PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -127,7 +135,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "5PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -158,7 +168,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "6PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -189,7 +201,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "7PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -220,7 +234,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "8PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -251,7 +267,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "9PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -282,7 +300,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "10PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -313,7 +333,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "11PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -344,7 +366,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "12PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
@@ -375,7 +399,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "Plot code": "13PO"
+            },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
